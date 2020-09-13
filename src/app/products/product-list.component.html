@@ -2,6 +2,9 @@
   <div class="card-header">
     {{pageTitle}}
   </div>
+  
+  <a class='nav-link' routerLinkActive='active' [routerLinkActiveOptions]="{exact: true}"
+  [routerLink]="['/products/0/edit']">Add Product</a>
 
   <div class="card-body">
     <div class="row">

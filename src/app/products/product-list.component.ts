@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { Product } from './product';
 import { ProductService } from './product.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
   templateUrl: './product-list.component.html',
