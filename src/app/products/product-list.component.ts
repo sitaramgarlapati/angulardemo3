@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Product } from './product';
 import { ProductService } from './product.service';
 import { NgForm } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   templateUrl: './product-list.component.html',
@@ -27,7 +28,7 @@ export class ProductListComponent implements OnInit {
   filteredProducts: Product[] = [];
   products: Product[] = [];
 
-  constructor(private productService: ProductService) { }
+  constructor(private productService: ProductService,  private route: ActivatedRoute) { }
 
   performFilter(filterBy: string): Product[] {
     filterBy = filterBy.toLocaleLowerCase();
@@ -47,5 +48,16 @@ export class ProductListComponent implements OnInit {
       },
       error: err => this.errorMessage = err
     });
+
+    //Route resolve code
+    // let resolvedData: Product[]  = this.route.snapshot.data['products'];
+    // console.log(resolvedData);
+    // if (resolvedData.length == 0) {
+    //   console.log('Dashboard component error: ');
+    // }
+    // else {
+    //   this.products = resolvedData;
+    // }
+
   }
 }

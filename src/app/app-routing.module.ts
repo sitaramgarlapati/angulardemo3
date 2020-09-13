@@ -8,21 +8,21 @@ import { ProductDetailComponent } from './products/product-detail.component';
 import { ProductEditComponent } from './products/product-edit.component';
 import { ProductEditGuard } from './products/product-edit.guard';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { ProductsResolverService } from './products/products-resolver.service';
 
 const routes: Routes = [
   {
-    path: 'dashboard',
-    component: DashboardComponent
+    path: 'dashboard',    component: DashboardComponent
   },
   {
-    path: 'login',
-    component: LoginComponent
+    path: 'login',    component: LoginComponent
   },
   {
     path: 'products',
     component: ProductListComponent,
     canActivate: [AuthGuard],
-    data: { claimType: 'canAccessProducts' }
+    data: { claimType: 'canAccessProducts' },
+    resolve: {resolvedBooks: ProductsResolverService}
   },
   {
     path: 'products/:id',
