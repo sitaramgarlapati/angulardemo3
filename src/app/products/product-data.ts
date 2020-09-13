@@ -8,10 +8,10 @@ export class ProductData implements InMemoryDbService {
     const products: Product[] = [
       {
         id: 1,
-        productName: 'Leaf Rake',
+        productName: 'Platinum Card',
         productCode: 'GDN-0011',
-        releaseDate: 'March 19, 2018',
-        description: 'Leaf rake with 48-inch wooden handle',
+        releaseDate: 'March 19, 2020',
+        description: 'Maximum Rewards',
         price: 19.95,
         starRating: 3.2,
         imageUrl: 'assets/images/leaf_rake.png',
